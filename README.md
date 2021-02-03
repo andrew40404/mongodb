@@ -37,7 +37,7 @@
 
     other hand with Multizone it is distributed to multiple zones, thus safer in an unforeseen
 
-​   zone failure
+    zone failure
 
 - If you wish to use Multizone please set up your account with[VRF
 
