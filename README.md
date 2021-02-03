@@ -12,7 +12,8 @@
 
 - You are now at the Kubernetes deployment page. You need to specify some details about the cluster
 
-- Choose a plan **standard** or **free** , the free plan only has one worker node and no subnet, to provision a standard cluster, you will need to upgrade your account to Pay-As-You-Go
+- Choose a plan **standard** or **free** , the free plan only has one worker node and no subnet, to provision a standard cluster, you will need to upgrade 
+  your account to Pay-As-You-Go
 
 - To upgrade to a Pay-As-You-Go account, complete the following steps:
 
@@ -32,21 +33,21 @@
 
 ![mongodb_html_72496e6b0b2c820d](https://user-images.githubusercontent.com/5286796/106396727-cb2e9400-642f-11eb-8791-bfb29ef4875c.png)
 
--   Choose 	Single or Multizone, in single zone your data is only kept in on 	datacenter, on the
+-   Choose Single or Multizone, in single zone your data is only kept in on datacenter, on the
 
-​      other hand with Multizone it is distributed to multiple zones, thus safer in an unforeseen
+    other hand with Multizone it is distributed to multiple zones, thus safer in an unforeseen
 
-​      zone failure
+​   zone failure
 
 - If you wish to use Multizone please set up your account with[VRF
 
 - If at your current location selection, there is no available Virtual LAN, a new VLAN will be created for you
 - Choose a Worker node setup or use the preselected one, set Worker node amount per zone
-- Choose **Master Service Endpoint**. In VRF-enabled accounts, you can choose private-only to make your master accessible on the private network or via VPN tunnel. Choose public-only to make your master publicly accessible. When you have a VRF-enabled account, your cluster is set up by default to use both private and public endpoints.
-   Give desired **tags** to your cluster, for more information visit tags
+- Choose **Master Service Endpoint**. In VRF-enabled accounts, you can choose private-only to make your master accessible on the private network or via VPN tunnel. Choose         public-only to make your master publicly accessible. When you have a VRF-enabled account, your cluster is set up by default to use both private and public endpoints.
+  Give desired **tags** to your cluster, for more information visit tags
 - Click **create**
-   • Wait for your cluster to be provisioned
-   • Your cluster is ready for usage
+  • Wait for your cluster to be provisioned
+  • Your cluster is ready for usage
 
 **Step 2 Deploy IBM Cloud Block Storage plug-in**
 
@@ -156,7 +157,7 @@ externalAccess.service.nodePorts[1]='node-port-2'
 
 Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
 
-The pod will try to get the external ip of the node using curl -s  **https://ipinfo.io/ip** **unless** **externalAccess.service.domain**  unless externalAccess.service.domain is provided.
+The pod will try to get the external ip of the node using curl -s **https://ipinfo.io/ip** **unless** **externalAccess.service.domain**  unless externalAccess.service.domain is provided.
 
 **Adding extra environment variables**
 
@@ -167,7 +168,6 @@ extraEnvVars:
    name: LOG_LEVEL
    value: error
 ```
-
 Alternatively, you can use a ConfigMap or a Secret with the environment variables. To do so, use the extraEnvVarsCM or the extraEnvVarsSecret properties.
 
 **Sidecars and Init Containers**
