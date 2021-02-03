@@ -72,11 +72,7 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 ![mongodb_html_bcca9b451248ae84](https://user-images.githubusercontent.com/5286796/106396722-c79b0d00-642f-11eb-81f9-084f9c9f04be.png)
 
-# **Step 3 **For MongoDB****
-
-## **Installing using Helm Chart****
-
-
+# **Step 3 **Installing MongoDB****
 
 ```sh
 helm repo add bitnami-ibm https://charts.bitnami.com/ibm
