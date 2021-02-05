@@ -116,10 +116,7 @@ externalAccess.autoDiscovery.enabled=true
 serviceAccount.create=true
 rbac.create=true
 ```
-
-
-
-Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
+> Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
 
 2.  Manually specify the load balancer IPs:
 
@@ -133,7 +130,7 @@ externalAccess.service.loadBalancerIPs[0]='external-ip-1'
 externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 ```
 
-Note: You should know the load balancer IP’s in advance so that each MongoDB node advertised hostname is configured with it.
+> Note: You should know the load balancer IP’s in advance so that each MongoDB node advertised hostname is configured with it.
 
 ******Using nodeport services**
 
@@ -148,7 +145,7 @@ externalAccess.service.nodePorts[0]='node-port-1'
 externalAccess.service.nodePorts[1]='node-port-2'
 ```
 
-Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
+> Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
 
 **Persistence**
 
