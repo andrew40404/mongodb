@@ -117,7 +117,7 @@ externalAccess.service.port=27017
 externalAccess.service.loadBalancerIPs[0]='external-ip-1'
 externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 ```
-Note: You need to know in advance the load balancer IPs, so each MongoDB node advertised hostname is configured with it.
+> Note: You need to know in advance the load balancer IPs, so each MongoDB node advertised hostname is configured with it.
 
 Using NodePort services
 
@@ -131,7 +131,7 @@ externalAccess.service.type=NodePort
 externalAccess.service.nodePorts[0]='node-port-1'
 externalAccess.service.nodePorts[1]='node-port-2'
 ```
-Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
+> Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
 
 The pod will try to get the external ip of the node using curl -s **https://ipinfo.io/ip** **unless** **externalAccess.service.domain**  unless externalAccess.service.domain is provided.
 
