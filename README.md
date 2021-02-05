@@ -65,11 +65,11 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 # **Step 3 **Installing MongoDB****
 
+**Installing using Helm Chart**
 ```sh
 helm repo add bitnami-ibm https://charts.bitnami.com/ibm
 $ helm install my-release bitnami-ibm/mongodb
 ```
-
 Specify each parameter using the --set key=value[,key=value] argument to helm install. For example,
 
 ```sh
@@ -79,10 +79,9 @@ $ helm install my-release \
 
    bitnami-ibm/mongodb
 ```
-
 The above command sets the MongoDB root account password to secretpassword. Additionally, it creates a standard database user named my-user, with the password my-password, who has access to a database named my-database.
 
-Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
+Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example:
 
 ```sh
 $ helm install my-release -f values.yaml bitnami-ibm/mongodb
@@ -96,8 +95,6 @@ You have two alternatives to use LoadBalancer services:
 
 Option A) Use random load balancer IPs using an initContainer that waits for the IPs to be ready and discover them automatically.
 
-
-
 ```sh
 architecture=replicaset
 replicaCount=2
@@ -108,12 +105,8 @@ externalAccess.autoDiscovery.enabled=true
 serviceAccount.create=true
 rbac.create=true
 ```
-
 Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
-
 Option B) Manually specify the load balancer IPs:
-
-
 
 ```sh
 architecture=replicaset
@@ -124,8 +117,7 @@ externalAccess.service.port=27017
 externalAccess.service.loadBalancerIPs[0]='external-ip-1'
 externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 ```
-
-Note: You need to know in advance the load balancer IPs so each MongoDB node advertised hostname is configured with it.
+Note: You need to know in advance the load balancer IPs, so each MongoDB node advertised hostname is configured with it.
 
 Using NodePort services
 
@@ -139,7 +131,6 @@ externalAccess.service.type=NodePort
 externalAccess.service.nodePorts[0]='node-port-1'
 externalAccess.service.nodePorts[1]='node-port-2'
 ```
-
 Note: You need to know in advance the node ports that will be exposed so each MongoDB node advertised hostname is configured with it.
 
 The pod will try to get the external ip of the node using curl -s **https://ipinfo.io/ip** **unless** **externalAccess.service.domain**  unless externalAccess.service.domain is provided.
