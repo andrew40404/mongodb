@@ -64,7 +64,6 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 ![mongodb_html_bcca9b451248ae84](https://user-images.githubusercontent.com/5286796/106396722-c79b0d00-642f-11eb-81f9-084f9c9f04be.png)
 
 # **Step 3 **Installing MongoDB
-
 **Prerequisites**
 
 - IBM Cloud Block Storage plug-in  
@@ -93,7 +92,7 @@ The allowed extensions are .sh, and .js.
 
 **Accessing MongoDB nodes from outside the cluster**
 
-In order to access MongoDB nodes from outside the cluster when using a replicaset architecture, a specific service per MongoDB pod will be created. 
+In order to access MongoDB nodes from outside the cluster when using a replica set architecture, a specific service per MongoDB pod will be created. 
 
 There are two ways of configuring external access:
 
@@ -155,7 +154,7 @@ The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/pers
 
 **Adjust permissions of persistent volume mountpoint**
 
-As the image run as non-root by default, it is necessary to adjust the ownership of the persistent volume so that the container can write data into it. By default, the chart is configured to use Kubernetes Security Context to automatically change the ownership of the volume. However, this feature does not work in all Kubernetes distributions.
+As the image runs as non-root by default, it is necessary to adjust the ownership of the persistent volume so that the container can write data into it. By default, the chart is configured to use Kubernetes Security Context to automatically change the ownership of the volume. However, this feature does not work in all Kubernetes distributions.
 
 As an alternative, this chart supports using an initContainer to change the ownership of the volume before mounting it in the final destination. You can enable this initContainer by setting volumePermissions.enabled to true.
 
@@ -191,17 +190,17 @@ To use your own CA set tls.caCert and tls.caKey with appropriate base64 encoded 
 
 **Accessing the cluster**
 
-To access the cluster you will need to enable the initContainer which generates the MongoDB server/client pem needed to access the cluster. Please ensure that you include the $my_hostname section with your actual hostname and alternative hostnames section should contain the hostnames you want to allow access to the MongoDB replicaset.
+To access the cluster you will need to enable the initContainer which generates the MongoDB server/client pem needed to access the cluster. Please ensure that you include the $my_hostname section with your actual hostname and the alternative hostnames section should contain the hostnames you want to allow access to the MongoDB replica set.
 
 **Starting the cluster**
 
-After the certs have been generated and made available to the containers at the correct mount points, the mongod server will be started with TLS enabled. The options for the TLS mode will be (disabled|allowTLS|preferTLS|requireTLS). This value can be changed via the MONGODB_EXTRA_FLAGS field using the tlsMode. The client should now be able to connect to the TLS enabled cluster with the provided certs.
+After the certs have been generated and made available to the containers at the correct mount points, the MongoDB server will be started with TLS enabled. The options for the TLS mode will be (disabled|allowTLS|preferTLS|requireTLS). This value can be changed via the MONGODB_EXTRA_FLAGS field using the tlsMode. The client should now be able to connect to the TLS enabled cluster with the provided certs.
 
 ### **Setting Pod's affinity**
 
 This chart allows you to set your custom affinity using the XXX.affinity parameter(s). Find more information about Pod's affinity in the [kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity).
 
-As an alternative, you can use of the preset configurations for pod affinity, pod anti-affinity, and node affinity available at the [bitnami/common](https://github.com/bitnami/charts/tree/master/bitnami/common#affinities) chart. To do so, set the XXX.podAffinityPreset, XXX.podAntiAffinityPreset, or XXX.nodeAffinityPreset parameters.
+As an alternative, you can use the preset configurations for pod affinity, pod anti-affinity, and node affinity available at the [bitnami/common](https://github.com/bitnami/charts/tree/master/bitnami/common#affinities) chart. To do so, set the XXX.podAffinityPreset, XXX.podAntiAffinityPreset, or XXX.nodeAffinityPreset parameters.
 
 The installation is done. Enjoy!
 
