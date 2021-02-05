@@ -63,7 +63,7 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 ![mongodb_html_bcca9b451248ae84](https://user-images.githubusercontent.com/5286796/106396722-c79b0d00-642f-11eb-81f9-084f9c9f04be.png)
 
-# **Step 3 **Installing MongoDB
+# Step 3 Installing MongoDB
 **Prerequisites**
 
 - IBM Cloud Block Storage plug-in  
@@ -131,7 +131,7 @@ externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 
 > Note: You should know the load balancer IP’s in advance so that each MongoDB node advertised hostname is configured with it.
 
-******Using nodeport services**
+**Using nodeport services**
 
 Manually specify the node ports to use:
 
