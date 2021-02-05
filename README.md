@@ -105,7 +105,7 @@ externalAccess.autoDiscovery.enabled=true
 serviceAccount.create=true
 rbac.create=true
 ```
-Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
+> Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
 Option B) Manually specify the load balancer IPs:
 
 ```sh
