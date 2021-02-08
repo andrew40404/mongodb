@@ -108,7 +108,7 @@ There are two alternatives to use LoadBalancer services:
 
 1. Use random load balancer IPs using an **initContainer** that waits for the IPs to be ready and discover them automatically
 
-```sh
+```yaml
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
@@ -122,7 +122,7 @@ rbac.create=true
 
 2.  Manually specify the load balancer IPs:
 
-```sh
+```yaml
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
@@ -138,7 +138,7 @@ externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 
 Manually specify the node ports to use:
 
-```sh
+```yaml
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
