@@ -167,7 +167,7 @@ You can use custom Prometheus rules for Prometheus operator by using the prometh
 
 metrics:
 
-```sh
+```yaml
 enabled: true
 prometheusRule:
   enabled: true
