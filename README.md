@@ -1,3 +1,5 @@
+# Installing MongoDB on IBM Cloud
+
 This document will describe how to install MongoDB on IBM Cloud using Kubernetes services.
 
 **Step 1 - provision Kubernetes Cluster**
@@ -63,7 +65,8 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 ![mongodb_html_bcca9b451248ae84](https://user-images.githubusercontent.com/5286796/106396722-c79b0d00-642f-11eb-81f9-084f9c9f04be.png)
 
-# Step 3 Installing MongoDB
+**Step 3 Installing MongoDB**
+
 **Prerequisites**
 
 - IBM Cloud Block Storage plug-in  
@@ -196,7 +199,7 @@ To access the cluster you will need to enable the initContainer which generates 
 
 After the certs have been generated and made available to the containers at the correct mount points, the MongoDB server will be started with TLS enabled. The options for the TLS mode will be (disabled|allowTLS|preferTLS|requireTLS). This value can be changed via the MONGODB_EXTRA_FLAGS field using the tlsMode. The client should now be able to connect to the TLS enabled cluster with the provided certs.
 
-### **Setting Pod's affinity**
+**Setting Pod's affinity**
 
 This chart allows you to set your custom affinity using the XXX.affinity parameter(s). Find more information about Pod's affinity in the [kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity).
 
