@@ -2,7 +2,7 @@
 
 This document will describe how to install MongoDB on IBM Cloud using Kubernetes services.
 
-**Step 1 - provision Kubernetes Cluster**
+**Step 1 - Provision Kubernetes Cluster**
 
 - Click the **Catalog** button on the top
 - Select **Service** from the **Catalog**
@@ -52,12 +52,12 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 - Select **Software** from the catalog
 - Search for **IBM Cloud Block Storage plug-in** and click on it
   
-   ![mongodb_html_80e526461a17c251](https://user-images.githubusercontent.com/5286796/106396725-c9fd6700-642f-11eb-8606-71998e0bbbc2.png)
+![mongodb_html_80e526461a17c251](https://user-images.githubusercontent.com/5286796/106396725-c9fd6700-642f-11eb-8606-71998e0bbbc2.png)
    
    • On the application page Click in the dot next to the cluster, you wish to use
    • Click on Enter or Select Namespace and choose the default Namespace or use a custom one (if you get error please wait 30 minutes for the cluster to finalize)
    
-   ![mongodb_html_c5a3e57a3c6cd652](https://user-images.githubusercontent.com/5286796/106396724-c964d080-642f-11eb-8e55-c82480054778.png)
+ ![mongodb_html_c5a3e57a3c6cd652](https://user-images.githubusercontent.com/5286796/106396724-c964d080-642f-11eb-8e55-c82480054778.png)
    
 - Give a **name** to this workspace
 
@@ -75,7 +75,7 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 - PV provisioner support in the underlying infrastructure
 
 
- **Installation**
+**Installation**
 
 To install the chart with the release name my-release:
 
@@ -108,7 +108,7 @@ There are two alternatives to use LoadBalancer services:
 
 1. Use random load balancer IPs using an **initContainer** that waits for the IPs to be ready and discover them automatically
 
-```yaml
+```sh
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
@@ -118,11 +118,11 @@ externalAccess.autoDiscovery.enabled=true
 serviceAccount.create=true
 rbac.create=true
 ```
-> Note: This option requires creating RBAC rules on clusters where RBAC policies are enabled.
+> Note: This option requires creating RBAC rules on clusters, where RBAC policies are enabled.
 
 2.  Manually specify the load balancer IPs:
 
-```yaml
+```sh
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
@@ -138,7 +138,7 @@ externalAccess.service.loadBalancerIPs[1]='external-ip-2'}
 
 Manually specify the node ports to use:
 
-```yaml
+```sh
 architecture=replicaset
 replicaCount=2
 externalAccess.enabled=true
@@ -185,15 +185,15 @@ prometheusRule:
 
 **Enabling SSL/TLS**
 
-This container supports enabling SSL/TLS between nodes in the cluster, as well as between mongo clients and nodes, by setting the MONGODB_EXTRA_FLAGS and MONGODB_CLIENT_EXTRA_FLAGS environment variables, together with the correct MONGODB_ADVERTISED_HOSTNAME. To enable full TLS encryption set tls.enabled to true
+This container supports enabling SSL/TLS between nodes in the cluster, as well as between mongo clients and nodes, by setting the MONGODB_EXTRA_FLAGS and MONGODB_CLIENT_EXTRA_FLAGS environment variables, together with the correct MONGODB_ADVERTISED_HOSTNAME. To enable full TLS encryption set tls.enabled to true.
 
 **Using your own CA**
 
-To use your own CA set tls.caCert and tls.caKey with appropriate base64 encoded data. The secrets-ca.yaml will utilise this data to create secret. 
+To use your own CA, set tls.caCert and tls.caKey with appropriate base64 encoded data. The secrets-ca.yaml will utilise this data to create secret. 
 
 **Accessing the cluster**
 
-To access the cluster you will need to enable the initContainer which generates the MongoDB server/client pem needed to access the cluster. Please ensure that you include the $my_hostname section with your actual hostname and the alternative hostnames section should contain the hostnames you want to allow access to the MongoDB replica set.
+To access the cluster you will need to enable the initContainer, which generates the MongoDB server/client pem needed to access the cluster. Please ensure that you include the $my_hostname section with your actual hostname and the alternative hostnames section should contain the hostnames you want to allow access to the MongoDB replica set.
 
 **Starting the cluster**
 
