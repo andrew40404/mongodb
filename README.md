@@ -35,8 +35,7 @@ This document will describe how to install MongoDB on IBM Cloud using Kubernetes
 - Choose **Master Service Endpoint**. 
 
 > In VRF-enabled accounts, you can choose private-only to make your master accessible on the private network or via VPN tunnel. Choose public-only to make your master publicly accessible. When you have a VRF-enabled account, your cluster is set up by default to use both private and public endpoints.
-- Give desired **tags** to your cluster. 
-- Click **create**
+- Give desired **tags** to your cluster, click **create**
 - Wait for your cluster to be provisioned
 - Your cluster is ready for usage
 
