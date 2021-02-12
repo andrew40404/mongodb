@@ -178,7 +178,7 @@ prometheusRule:
 
 ### Enabling SSL/TLS
 
-This container supports enabling SSL/TLS between nodes in the cluster, as well as between mongo clients and nodes, by setting the MONGODB_EXTRA_FLAGS and MONGODB_CLIENT_EXTRA_FLAGS environment variables, together with the correct MONGODB_ADVERTISED_HOSTNAME. To enable full TLS encryption set tls.enabled to true.
+This container supports enabling SSL/TLS between nodes in the cluster, as well as between mongo clients and nodes, by setting the ``MONGODB_EXTRA_FLAGS`` and ``MONGODB_CLIENT_EXTRA_FLAGS`` environment variables, together with the correct ``MONGODB_ADVERTISED_HOSTNAME``. To enable full TLS encryption set tls.enabled to true.
 
 ### Using your own CA
 
@@ -190,7 +190,7 @@ To access the cluster you will need to enable the initContainer, which generates
 
 ### Starting the cluster
 
-After the certs have been generated and made available to the containers at the correct mount points, the MongoDB server will be started with TLS enabled. The options for the TLS mode will be (disabled|allowTLS|preferTLS|requireTLS). This value can be changed via the MONGODB_EXTRA_FLAGS field using the tlsMode. The client should now be able to connect to the TLS enabled cluster with the provided certs.
+After the certs have been generated and made available to the containers at the correct mount points, the MongoDB server will be started with TLS enabled. The options for the TLS mode will be (disabled|allowTLS|preferTLS|requireTLS). This value can be changed via the ``MONGODB_EXTRA_FLAGS`` field using the tlsMode. The client should now be able to connect to the TLS enabled cluster with the provided certs.
 
 ### Setting Pod's affinity
 
