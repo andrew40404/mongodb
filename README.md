@@ -39,7 +39,7 @@ This document will describe how to install MongoDB on IBM Cloud using Kubernetes
 - Wait for your cluster to be provisioned
 - Your cluster is ready for usage
 
-## Step 2 Deploy IBM Cloud Block Storage plug-in
+## Step 2 - Deploy IBM Cloud Block Storage plug-in
 
 The Block Storage plug-in is a persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes Persistent Volumes (PVs).
 - Click the **Catalog** button on the top
@@ -59,7 +59,7 @@ The Block Storage plug-in is a persistent, high-performance iSCSI storage that y
 
 ![mongodb_html_bcca9b451248ae84](https://user-images.githubusercontent.com/5286796/106396722-c79b0d00-642f-11eb-81f9-084f9c9f04be.png)
 
-## Step 3 Installing MongoDB
+## Step 3 - Installing MongoDB
 
 ### Prerequisites
 
